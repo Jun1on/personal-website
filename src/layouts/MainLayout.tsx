@@ -10,18 +10,18 @@ import TopBarNotify from './TopBarNotify';
 export function MainLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <TopBarNotify
-        notifyText="Users can now stake GHO in the safety module 🎉"
+      {/*<TopBarNotify
+        notifyText="Hello World! 🎉"
         learnMoreLink="https://app.aave.com/staking"
-        buttonText="Stake Now"
-      />
+        buttonText="Click Here"
+      />*/}
       <AppHeader />
       <Box component="main" sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
         {children}
       </Box>
 
-      <AppFooter />
-      {FORK_ENABLED ? null : <AnalyticsConsent />}
+      {/*<AppFooter />
+      {FORK_ENABLED ? null : <AnalyticsConsent />}*/}
     </>
   );
 }

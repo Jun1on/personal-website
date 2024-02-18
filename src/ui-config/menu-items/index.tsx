@@ -1,5 +1,6 @@
-import { BookOpenIcon, CreditCardIcon, QuestionMarkCircleIcon } from '@heroicons/react/outline';
-import { t } from '@lingui/macro';
+import YoutubeIcon from 'public/icons/youtube.svg';
+import TwitterIcon from 'public/icons/twitter.svg';
+import DiscordIcon from 'public/icons/discord.svg';
 import { ReactNode } from 'react';
 import { ROUTES } from 'src/components/primitives/Link';
 import { ENABLE_TESTNET } from 'src/utils/marketsAndNetworksConfig';
@@ -16,17 +17,17 @@ interface Navigation {
 export const navigation: Navigation[] = [
   {
     link: ROUTES.dashboard,
-    title: t`Dashboard`,
+    title: `About`,
     dataCy: 'menuDashboard',
   },
   {
     link: ROUTES.markets,
-    title: t`Markets`,
+    title: `Markets`,
     dataCy: 'menuMarkets',
   },
   {
     link: ROUTES.staking,
-    title: t`Stake`,
+    title: `Stake`,
     dataCy: 'menuStake',
     isVisible: () =>
       process.env.NEXT_PUBLIC_ENABLE_STAKING === 'true' &&
@@ -35,7 +36,7 @@ export const navigation: Navigation[] = [
   },
   {
     link: ROUTES.governance,
-    title: t`Governance`,
+    title: `Governance`,
     dataCy: 'menuGovernance',
     // isVisible: () =>
     //   process.env.NEXT_PUBLIC_ENABLE_GOVERNANCE === 'true' &&
@@ -44,7 +45,7 @@ export const navigation: Navigation[] = [
   },
   {
     link: ROUTES.faucet,
-    title: t`Faucet`,
+    title: `Faucet`,
     isVisible: () => process.env.NEXT_PUBLIC_ENV === 'staging' || ENABLE_TESTNET,
   },
 ];
@@ -56,25 +57,19 @@ interface MoreMenuItem extends Navigation {
 
 const moreMenuItems: MoreMenuItem[] = [
   {
-    link: 'https://docs.aave.com/faq/',
-    title: t`FAQ`,
-    icon: <QuestionMarkCircleIcon />,
+    link: 'https://youtube.com/@jun',
+    title: `YouTube`,
+    icon: <YoutubeIcon />,
   },
   {
-    link: 'https://docs.aave.com/portal/',
-    title: t`Developers`,
-    icon: <BookOpenIcon />,
+    link: 'https://twitter.com/Jun1on',
+    title: `Twitter`,
+    icon: <TwitterIcon />,
+  },
+  {
+    link: 'https://discord.com/invite/HFMBXxXz2B',
+    title: `Discord`,
+    icon: <DiscordIcon />,
   },
 ];
-
-const fiatEnabled = process.env.NEXT_PUBLIC_FIAT_ON_RAMP;
-if (fiatEnabled === 'true') {
-  moreMenuItems.push({
-    link: 'https://global.transak.com',
-    makeLink: (walletAddress) =>
-      `${process.env.NEXT_PUBLIC_TRANSAK_APP_URL}/?apiKey=${process.env.NEXT_PUBLIC_TRANSAK_API_KEY}&walletAddress=${walletAddress}&disableWalletAddressForm=true`,
-    title: t`Buy Crypto With Fiat`,
-    icon: <CreditCardIcon />,
-  });
-}
 export const moreNavigation: MoreMenuItem[] = [...moreMenuItems];

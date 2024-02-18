@@ -1,5 +1,4 @@
 import { CogIcon } from '@heroicons/react/solid';
-import { Trans } from '@lingui/macro';
 import { Button, Menu, MenuItem, SvgIcon, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DEFAULT_LOCALE } from 'src/libs/LanguageProvider';
@@ -83,7 +82,7 @@ export function SettingsMenu() {
       >
         <MenuItem disabled sx={{ mb: '4px' }}>
           <Typography variant="subheader2" color="text.secondary">
-            <Trans>Global settings</Trans>
+            Settings
           </Typography>
         </MenuItem>
 

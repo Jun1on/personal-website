@@ -1,4 +1,3 @@
-import { Trans } from '@lingui/macro';
 import { Box, FormControlLabel, ListItem, ListItemText, MenuItem, Switch } from '@mui/material';
 import React, { useState } from 'react';
 import { useRootStore } from 'src/store/root';
@@ -25,7 +24,7 @@ export const TestNetModeSwitcher = ({ component = ListItem }: TestNetModeSwitche
   return (
     <Box
       component={component}
-      onClick={toggleTestnetsEnabled}
+      onClick={() => {}/*toggleTestnetsEnabled*/}
       sx={{
         cursor: 'pointer',
         color: { xs: '#F1F1F3', md: 'text.primary' },
@@ -33,7 +32,7 @@ export const TestNetModeSwitcher = ({ component = ListItem }: TestNetModeSwitche
       }}
     >
       <ListItemText>
-        <Trans>Testnet mode</Trans>
+        Expert mode
       </ListItemText>
       <FormControlLabel
         sx={{ mr: 0 }}

@@ -1,4 +1,4 @@
-import { InformationCircleIcon, SwitchHorizontalIcon } from '@heroicons/react/outline';
+import { SwitchHorizontalIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import {
   Badge,
@@ -15,14 +15,11 @@ import {
 import Box from '@mui/material/Box';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { ContentWithTooltip } from 'src/components/ContentWithTooltip';
 import { useModalContext } from 'src/hooks/useModal';
 import { useRootStore } from 'src/store/root';
-import { ENABLE_TESTNET, FORK_ENABLED } from 'src/utils/marketsAndNetworksConfig';
 
 import { Link } from '../components/primitives/Link';
 import { useProtocolDataContext } from '../hooks/useProtocolDataContext';
-import { uiConfig } from '../uiConfig';
 import { NavItems } from './components/NavItems';
 import { MobileMenu } from './MobileMenu';
 import { SettingsMenu } from './SettingsMenu';
@@ -213,47 +210,10 @@ export function AppHeader() {
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <img src={uiConfig.appLogo} alt="AAVE" width={72} height={20} />
+          <img src={'./junionLogo.svg'} alt="JUN" width={43} height={20} />
         </Box>
         <Box sx={{ mr: sm ? 1 : 3 }}>
-          {ENABLE_TESTNET && (
-            <ContentWithTooltip tooltipContent={testnetTooltip} offset={[0, -4]} withoutHover>
-              <Button
-                variant="surface"
-                size="small"
-                color="primary"
-                sx={{
-                  backgroundColor: '#B6509E',
-                  '&:hover, &.Mui-focusVisible': { backgroundColor: 'rgba(182, 80, 158, 0.7)' },
-                }}
-              >
-                TESTNET
-                <SvgIcon sx={{ marginLeft: '2px', fontSize: '16px' }}>
-                  <InformationCircleIcon />
-                </SvgIcon>
-              </Button>
-            </ContentWithTooltip>
-          )}
-        </Box>
-        <Box sx={{ mr: sm ? 1 : 3 }}>
-          {FORK_ENABLED && currentMarketData?.isFork && (
-            <ContentWithTooltip tooltipContent={forkTooltip} offset={[0, -4]} withoutHover>
-              <Button
-                variant="surface"
-                size="small"
-                color="primary"
-                sx={{
-                  backgroundColor: '#B6509E',
-                  '&:hover, &.Mui-focusVisible': { backgroundColor: 'rgba(182, 80, 158, 0.7)' },
-                }}
-              >
-                FORK
-                <SvgIcon sx={{ marginLeft: '2px', fontSize: '16px' }}>
-                  <InformationCircleIcon />
-                </SvgIcon>
-              </Button>
-            </ContentWithTooltip>
-          )}
+
         </Box>
 
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>

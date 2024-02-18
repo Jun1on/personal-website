@@ -15,10 +15,7 @@ import React from 'react';
 import { dynamicActivateLanguage } from '../../libs/LanguageProvider';
 
 const langMap = {
-  en: t`English`,
-  es: t`Spanish`,
-  fr: t`French`,
-  el: t`Greek`,
+  en: t`English`
 };
 
 interface LanguageListItemProps {

@@ -1,11 +1,11 @@
 {
-  "short_name": "Aave",
-  "name": "Aave",
-  "description": "Non-custodial liquidity protocol",
+  "short_name": "Junion",
+  "name": "Junion",
+  "description": "hello world",
   "iconPath": "aave.svg",
   "icons": [
     {
-      "src": "favicon32.png",
+      "src": "junion_icon180.png",
       "sizes": "32x32",
       "type": "image/png"
     }

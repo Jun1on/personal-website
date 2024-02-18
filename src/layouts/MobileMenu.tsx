@@ -73,7 +73,7 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
             <MenuItemsWrapper title={<Trans>Menu</Trans>}>
               <NavItems setOpen={setOpen} />
             </MenuItemsWrapper>
-            <MenuItemsWrapper title={<Trans>Global settings</Trans>}>
+            <MenuItemsWrapper title={'Settings'}>
               <List>
                 <DarkModeSwitcher />
                 {PROD_ENV && <TestNetModeSwitcher />}
